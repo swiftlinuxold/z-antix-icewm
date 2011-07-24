@@ -1,0 +1,7 @@
+The options under Main menu -> Settings -> Themes options should be limited to only default, icedesert, nice, nice2, win95, and yellowmotif.
+
+The win95 theme should be already implemented.
+
+The main menu of the live CD should include a "Swift Linux Installer" option.  This option should NOT be available after Swift Linux is freshly installed on a hard drive.
+
+Make sure that the Help section of the main menu does not include links to deleted applications (such as Fluxbox)
