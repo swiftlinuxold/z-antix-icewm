@@ -72,4 +72,4 @@ menu "Help" /usr/share/icons/gTangish-2.0a1/32x32/apps/help-browser.png {
 		prog "Backup" - roxterm -e man luckybackup
 	}
 }
-
+prog "Swift Linux Installer" - gksu minstall
