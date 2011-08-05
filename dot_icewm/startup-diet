@@ -20,7 +20,7 @@ conky &
 
 ## Set desktop icons
 #pcmanfm --desktop &
-rox --pinboard=swift-ice &
+rox --pinboard=swift &
 
 # set live keyboard
 #setxkbmap
