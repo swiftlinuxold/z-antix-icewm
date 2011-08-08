@@ -12,8 +12,6 @@ auto-icewm-menu.sh &
 #Use feh to set wallpaper
 eval `cat ~/.fehbgrox-ice` &
 
-conky &
-
 # xgamma -rgamma 1.3 -ggamma 1.3 -bgamma 1.3 # Uncomment this line if you need gamma correction.
 # Go to http://links.twibright.com/calibration.html to adjust your gamma.
 
@@ -38,3 +36,5 @@ rox --pinboard=antiX-ice &
 #nitrogen --restore &
 
 sleep 5 && volumeicon &
+
+sleep 5 && conky &
