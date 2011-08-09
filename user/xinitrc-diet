@@ -1,0 +1,72 @@
+#xset m 10 2
+xmodmap -e 'pointer = 1 2 3 4 5'
+
+
+# The following line gets changed by antiX-init.sh with the desktop= cheatcode
+XINITRC_DEFAULT="icewm-session"
+
+case $1 in
+icewm)
+        sed -i -e 's/fehbgrox-ice/fehbgice/g' ~/.icewm/startup
+        sed -i -e "s/rox --pinboard=antiX-ice &/#rox --pinboard=antiX-ice &/" ~/.icewm/startup
+        sh ~/.fehbgice &
+	exec icewm-session
+	;;
+
+lxde) 
+        exec startlxde
+        ;;
+
+xfce)
+        exec startxfce4
+        ;;
+
+dwm)
+        exec dwm
+        ;;
+
+wmii)
+        exec wmii
+        ;;
+
+fvwm-crystal)
+        exec fvwm-crystal 
+        ;;
+
+kde)
+        exec startkde
+        ;;
+
+gnome)
+        exec gnome-session
+        ;;
+
+openbox)
+        exec openbox-session
+        ;;
+
+fluxbox)
+        sed -i -e 's/fehbgrox-fb/fehbgfb/g' ~/.fluxbox/startup
+        sed -i -e "s/rox --pinboard=antiX-fb &/#rox --pinboard=antiX-fb &/" ~/.fluxbox/startup
+        sh ~/.fehbgfb &
+	exec startfluxbox
+	;;
+
+Rox-fluxbox)
+        sed -i -e 's/fehbgfb/fehbgrox-fb/g' ~/.fluxbox/startup
+        sh ~/.fehbgrox-fb &
+        rox --pinboard=antiX-fb
+        exec startfluxbox
+        ;; 
+
+Rox-icewm)
+        sed -i -e 's/fehbgice/fehbgrox-ice/g' ~/.icewm/startup
+        sh ~/.fehbgrox-ice &
+        rox --pinboard=antiX-ice
+        exec icewm-session
+        ;;
+
+*)
+	exec $XINITRC_DEFAULT
+	;;
+esac

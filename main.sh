@@ -124,4 +124,18 @@ else
 	chown demo:users /etc/skel/.icewm/startup
 fi
 
+if [ $IS_CHROOT -eq 0 ]; then
+	rm /home/$USERNAME/.xinitrc
+	cp $DIR_DEVELOP/icewm/user/xinitrc-diet /home/$USERNAME/.xinitrc
+	chown $USERNAME:users /home/$USERNAME/.xinitrc
+fi
+
+rm /etc/skel/.xinitrc
+cp $DIR_DEVELOP/icewm/user/xinitrc-diet /etc/skel/.xinitrc
+if [ $IS_CHROOT -eq 0 ]; then
+	chown $USERNAME:users /etc/skel/.xinitrc
+else
+	chown demo:users /etc/skel/.xinitrc
+fi
+
 exit 0
