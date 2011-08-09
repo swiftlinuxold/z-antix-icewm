@@ -124,6 +124,8 @@ else
 	chown demo:users /etc/skel/.icewm/startup
 fi
 
+echo "Changing .xinitrc"
+
 if [ $IS_CHROOT -eq 0 ]; then
 	rm /home/$USERNAME/.xinitrc
 	cp $DIR_DEVELOP/icewm/user/xinitrc-diet /home/$USERNAME/.xinitrc
