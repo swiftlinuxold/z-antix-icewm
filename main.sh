@@ -125,6 +125,9 @@ else
 fi
 
 echo "Changing .xinitrc"
+# The command "exec icewm-session" is needed in the .xinitrc file.
+# If the .xinitrc file only has "exec icewm", Conky does not automatically load
+# after installation.
 
 if [ $IS_CHROOT -eq 0 ]; then
 	rm /home/$USERNAME/.xinitrc
