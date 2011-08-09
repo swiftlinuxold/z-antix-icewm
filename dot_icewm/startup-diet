@@ -37,4 +37,7 @@ rox --pinboard=antiX-ice &
 
 sleep 5 && volumeicon &
 
-sleep 5 && conky &
+auto-icewm-menu.sh # Updates the IceWM menu
+
+killall conky # Stop Conky
+conky & # Run Conky in the background
